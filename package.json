@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio of work",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthew678532/portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "blog",
+    "webdev",
+    "webdes"
+  ],
+  "author": "Matthew L. Birch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matthew678532/portfolio/issues"
+  },
+  "homepage": "https://github.com/matthew678532/portfolio#readme"
+}
