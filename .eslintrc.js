@@ -102,7 +102,7 @@ module.exports = {
     "no-unused-vars": 1,
     "no-use-before-define": 1,
 
-    "indent": [2, 2, {"SwitchCase": 1}],
+    "indent": [2, 4, {"SwitchCase": 1}],
     "linebreak-style": [1, "windows"],
     "quotes": [2, "single"],
     "semi": [2, "never"],
@@ -125,7 +125,7 @@ module.exports = {
     "lines-between-class-members": [1, "always"],
     "max-depth": [1, {"max": 4}],
     "max-len": [1, {
-      "code": 80,
+      "code": 90,
       "tabWidth": 2
     }],
     "max-nested-callbacks": [1, {"max": 3}],
