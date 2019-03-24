@@ -90,7 +90,7 @@ function watch() {
 }
 
 function build() {
-    return gulp.series('clean', gulp.parallel('jekyll', 'sass', 'js', 'image'))
+    return gulp.series(clean, gulp.parallel(jekyll, sass, js, image))
 }
 
 function main() {
