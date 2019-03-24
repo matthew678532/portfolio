@@ -1,0 +1,25 @@
+name: 'Site Name'
+email: 'your_email@domain.com'
+description: >
+  A description of your website, use the same one as you use within your package description! (Note; Use > for multi-line descriptions).
+
+source: ./src
+destination: ./dist
+
+include:
+  - '_pages'
+
+exclude:
+  - '.gitignore'
+  - 'README.md'
+  - 'gulpfile.js'
+  - 'config.json'
+
+strict_front_matter: true
+
+incremental: true
+
+url: 'http://localhost:8080/'
+
+permalink: pretty
+timezone: Europe/London
