@@ -1,0 +1,92 @@
+html, body
+	font-family: $source-sans-pro
+	font-size: 16px
+	line-height: 1
+	color: $font-color
+	background-color: #EFEFEF
+	max-width: 100%
+	position: relative
+	-webkit-font-smoothing: antialiased !important
+
+*
+  box-sizing: border-box
+
+*::before,
+*::after
+  box-sizing: border-box
+
+body
+	-webkit-tap-highlight-color: transparentize($highlight, 0.8)
+
+::selection, img::selection
+  background: transparentize($highlight, 0.8)
+
+textarea
+	resize: vertical
+
+input, textarea, select
+	font-family: inherit
+	outline: none
+	border: none
+
+	&:focus
+		outline: none
+
+button
+	font-family: inherit
+	border: none
+
+	&:focus
+		outline: none
+
+ul, ol
+	padding: 0
+	margin: 0
+	list-style: none
+
+li
+  list-style-type: none
+
+hr
+	height: 1px
+	border: none
+	border-bottom: 1px solid $silver
+	margin: 20px 0
+
+.huge, .large, h1, h2, h3, h4, h5, h6, p
+  color: $font-color
+  margin: 0
+
+.large, h1, h2, h3, h4, h5, h6, p
+  font-family: $source-sans-pro
+  font-weight: 400
+
+.huge
+  font-family: $playfair-display
+  font-weight: 700
+  font-size: 4rem
+  line-height: 1.20
+
+.large
+	font-size: 3rem
+	line-height: 1.15
+
+h1
+	font-size: 2.5rem
+	line-height: 1.10
+
+h2
+	font-size: 2rem
+	line-height: 1.05
+
+h3
+	font-size: 1.8rem
+
+h4
+	font-size: 1.6rem
+
+h5
+	font-size: 1.4rem
+
+h6
+	font-size: 1.2rem
