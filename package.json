@@ -22,7 +22,9 @@
     "url": "https://github.com/matthew678532/portfolio/issues"
   },
   "homepage": "https://github.com/matthew678532/portfolio#readme",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.4.1"
+  },
   "devDependencies": {
     "browser-sync": "^2.26.3",
     "del": "^4.0.0",

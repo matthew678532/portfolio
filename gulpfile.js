@@ -18,7 +18,7 @@ const eslint = require('gulp-eslint')
 const browserSync = require('browser-sync').create()
 const rename = require('gulp-rename')
 const del = require('del')
-const cp = require('child-process')
+const cp = require('child_process')
 
 function jekyll(done) {
     const instance = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll'
@@ -32,10 +32,10 @@ function css() {
     return gulp.src('src/assets/css/main.sass')
         .pipe(sourcemaps.init())
         .pipe(sass())
-        .pipe(sourcemaps.write('dist/assets/css'))
         .pipe(prefix())
         .pipe(rename({suffix: '.min'}))
         .pipe(cssnano())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist/assets/css'))
         .pipe(browserSync.stream())
 }
@@ -54,7 +54,7 @@ function js() {
         .pipe(concat('main.js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
-        .pipe(sourcemaps.write('dist/assets/js'))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist/assets/js'))
         .pipe(browserSync.stream())
 }
@@ -89,9 +89,7 @@ function watch() {
     gulp.watch('src/assets/img/**/*', image)
 }
 
-function build() {
-    return gulp.series(clean, gulp.parallel(jekyll, sass, js, image))
-}
+const build = gulp.series(clean, gulp.parallel(jekyll, css, js, image))
 
 function main() {
     return gulp.series(build, bs, watch)
@@ -99,5 +97,6 @@ function main() {
 
 exports.default = main
 exports.watch = watch
+
 exports.build = build
 exports.lint = lint

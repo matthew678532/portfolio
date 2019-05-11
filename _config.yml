@@ -10,10 +10,7 @@ include:
   - '_pages'
 
 exclude:
-  - '.gitignore'
-  - 'README.md'
-  - 'gulpfile.js'
-  - 'config.json'
+  - 'assets/**/**'
 
 strict_front_matter: true
 
