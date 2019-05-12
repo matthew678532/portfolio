@@ -1,7 +1,7 @@
 node_modules/
 logs
 *.log
-_site/
 .jekyll-metadata
 .sass_cache/
 .DS_STORE
+dist/

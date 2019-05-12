@@ -69,13 +69,19 @@ function image() {
         .pipe(browserSync.stream())
 }
 
-function bs() {
+function bs(done) {
     browserSync.init({
         server: {
             baseDir: 'dist'
         },
         port: 8080
     })
+    done()
+}
+
+function bsReload(done) {
+    browserSync.reload()
+    done()
 }
 
 function clean() {
@@ -83,20 +89,16 @@ function clean() {
 }
 
 function watch() {
-    gulp.watch('src/**/*.{html,md}', jekyll)
-    gulp.watch('src/assets/css/**/*.{sass,scss}', css)
-    gulp.watch('src/assets/js/**/*.js', js)
-    gulp.watch('src/assets/img/**/*', image)
+    gulp.watch('src/**/*.{html,md}', gulp.series(jekyll, bsReload))
+    gulp.watch('src/assets/css/**/*.{sass,scss}', gulp.series(css, bsReload))
+    gulp.watch('src/assets/js/**/*.js', gulp.series(css, bsReload))
+    gulp.watch('src/assets/img/**/*', gulp.series(image, bsReload))
 }
 
 const build = gulp.series(clean, gulp.parallel(jekyll, css, js, image))
-
-function main() {
-    return gulp.series(build, bs, watch)
-}
+const main = gulp.series(build, bs, watch)
 
 exports.default = main
 exports.watch = watch
-
 exports.build = build
 exports.lint = lint
