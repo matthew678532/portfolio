@@ -29,43 +29,43 @@ function jekyll(done) {
 }
 
 function css() {
-    return gulp.src('src/assets/css/main.sass')
+    return gulp.src('src/css/main.sass')
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(prefix())
         .pipe(rename({suffix: '.min'}))
         .pipe(cssnano())
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('dist/assets/css'))
+        .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream())
 }
 
 function lint() {
-    return gulp.src('src/assets/js/**/*.js')
+    return gulp.src('src/js/**/*.js')
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError())
 }
 
 function js() {
-    const vinyls = ['node_modules/jquery/dist/jquery.min.js', 'src/assets/js/**/*.js']
-    return gulp.src(vinyls)
-        .pipe(sourcemaps.init())
-        .pipe(concat('main.js'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(uglify())
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('dist/assets/js'))
+    // const vinyls = ['node_modules/jquery/dist/jquery.min.js', 'src/assets/js/**/*.js']
+    return gulp.src('src/**/*.js')
+        // .pipe(sourcemaps.init())
+        // .pipe(concat('main.js'))
+        // .pipe(rename({suffix: '.min'}))
+        // .pipe(uglify())
+        // .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('dist'))
         .pipe(browserSync.stream())
 }
 
 function image() {
-    return gulp.src('src/assets/img/**/*')
+    return gulp.src('src/img/**/*')
         .pipe(cache(imagemin([
             imagemin.jpegtran({progressive: true}),
             imagemin.optipng({optimizationLevel: 5})
         ])))
-        .pipe(gulp.dest('dist/assets/img'))
+        .pipe(gulp.dest('dist/img'))
         .pipe(browserSync.stream())
 }
 
@@ -90,9 +90,9 @@ function clean() {
 
 function watch() {
     gulp.watch('src/**/*.{html,md}', gulp.series(jekyll, bsReload))
-    gulp.watch('src/assets/css/**/*.{sass,scss}', gulp.series(css, bsReload))
-    gulp.watch('src/assets/js/**/*.js', gulp.series(css, bsReload))
-    gulp.watch('src/assets/img/**/*', gulp.series(image, bsReload))
+    gulp.watch('src/css/**/*.{sass,scss}', gulp.series(css, bsReload))
+    gulp.watch('src/js/**/*.js', gulp.series(js, bsReload))
+    gulp.watch('src/img/**/*', gulp.series(image, bsReload))
 }
 
 const build = gulp.series(clean, gulp.parallel(jekyll, css, js, image))
