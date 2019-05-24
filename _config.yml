@@ -10,7 +10,9 @@ include:
   - '_pages'
 
 exclude:
-  - 'assets/**/**'
+  - 'css/'
+  - 'img/'
+  - 'js/'
 
 strict_front_matter: true
 

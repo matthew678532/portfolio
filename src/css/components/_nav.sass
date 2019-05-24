@@ -1,0 +1,35 @@
+.nav
+  height: 75px
+  width: 100%
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)
+
+  .trigger
+    position: absolute
+    height: 75px
+    width: 90px
+    right: 0px
+
+    &:hover
+      background-color: red
+
+    .hamburger
+      position: absolute
+      left: 12.5px
+      width: 65px
+      top: 37.5px
+      height: 5px
+      background-color: $font-color
+
+      &::before, &::after
+        content: ""
+        position: absolute
+        width: 65px
+        top: 0px
+        height: 5px
+        background-color: $font-color
+
+      &::before
+        top: -15px
+
+      &::after
+        top: 15px

@@ -95,7 +95,7 @@ function watch() {
     gulp.watch('src/img/**/*', gulp.series(image, bsReload))
 }
 
-const build = gulp.series(clean, gulp.parallel(jekyll, css, js, image))
+const build = gulp.series(clean, jekyll, gulp.parallel(js, image, css))
 const main = gulp.series(build, bs, watch)
 
 exports.default = main
