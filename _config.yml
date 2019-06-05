@@ -9,10 +9,11 @@ destination: ./dist
 include:
   - '_pages'
 
-exclude:
+keep_files:
   - 'css/'
   - 'img/'
   - 'js/'
+  - 'app.js'
 
 strict_front_matter: true
 
