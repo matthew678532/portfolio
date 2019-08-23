@@ -1,12 +1,11 @@
-define('components/nav', ['jquery'], function($) {
-    var $nav = $('.nav')
+define('components/nav', ['jquery', 'helper/util'], function($, util) {
+    var $nav = $('#nav')
     var $navItems = $('.nav-items')
     var $trigger = $('.trigger')
-    var $body = $('body')
+    var $frame = $('html, body')
+    var $a = $('a[href*="#"]')
 
     var timer = null
-
-    $trigger.on('click', showMenu)
 
     function showMenu() {
         $trigger.toggleClass('active')
@@ -28,19 +27,29 @@ define('components/nav', ['jquery'], function($) {
     }
 
     function prepareDesktopNav() {
-        var desktopWidth = 1024
-        var windowWidth = $(window).width()
-
-        if (windowWidth >= desktopWidth) {
+        if (util.getViewportDimensions() > 900) {
             $nav.addClass('active')
 
             timer = setTimeout(function() {
                 $nav.removeClass('active')
             }, 5000)
 
-            $body.mousemove(showHideDesktopMenu)
+            $frame.mousemove(showHideDesktopMenu)
+        }
+    }
+
+    function smoothScrollToAnchor() {
+        var $target = $(this.hash)
+
+        if($target.length) {
+            $frame.animate({
+                scrollTop: $target.offset().top
+            }, 600, 'linear')
+            return false
         }
     }
 
     prepareDesktopNav()
+    $trigger.on('click', showMenu)
+    $a.on('click', smoothScrollToAnchor)
 })

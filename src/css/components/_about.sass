@@ -1,28 +1,107 @@
-.about
+#about
   width: 100%
-  height: 500px
-  display: flex
-  justify-content: center
-  align-items: center
+  height: 550px
+  background-color: $primary
+  position: relative
+
+  @include respond-to(tablet-landscape)
+    display: flex
 
   .header
+    z-index: 1
+    width: 100%
+    height: inherit
+    @extend %center
+
+    & > h1
+      color: $on-primary
+
+    @include respond-to(tablet-landscape)
+      flex: 50%
+      justify-content: flex-start
+      padding-left: 100px
+
+  .portrait-container
+    display: none
+    @extend %center
+
+    @include respond-to(tablet-landscape)
+      display: flex
+      flex: 50%
+
+      .portrait
+        width: 400px
+        height: 400px
+        background-color: $highlight
+        z-index: 2
+
+      .portrait-border
+        width: 400px
+        height: 400px
+        background-image: linear-gradient(45deg, $primary 15%, $secondary)
+        position: absolute
+        margin-top: 35px
+        margin-left: -35px
+        z-index: 1
+
+  .skill
+    width: 100px
     height: 100px
-    width: 80%
-    border: 5px solid black
-    display: flex
-    justify-content: center
-    align-items: center
-    flex-direction: column
-    background-color: white
+    background-color: $secondary
+    position: absolute
+    border-radius: 50%
 
-    .name, .title
-      line-height: 1.4
+    @extend %center
 
-    .name
-      font-family: $playfair-display
-      font-size: 24px
-      font-weight: 700
+    & > p
+      color: $on-primary
+      font-weight: bold
+      font-size: 1.2rem
 
-    .title
-      font-family: $source-sans-pro
-      font-size: 20px
+  .skill-1
+    animation-name: path-one
+    animation-duration: 300ms
+    animation-timing-function: ease
+    animation-delay: 0s
+    animation-iteration-count: 1
+    animation-direction: normal
+    animation-fill-mode: forwards
+
+  .skill-2
+    animation-name: path-one
+    animation-duration: 300ms
+    animation-timing-function: ease
+    animation-delay: 0s
+    animation-iteration-count: 1
+    animation-direction: reverse
+    animation-fill-mode: forwards
+
+  .skill-3
+    animation-name: path-two
+    animation-duration: 300ms
+    animation-timing-function: ease
+    animation-delay: 0s
+    animation-iteration-count: 1
+    animation-direction: normal
+    animation-fill-mode: forwards
+
+  .skill-4
+    animation-name: path-two
+    animation-duration: 300ms
+    animation-timing-function: ease
+    animation-delay: 0s
+    animation-iteration-count: 1
+    animation-direction: reverse
+    animation-fill-mode: forwards
+
+@keyframes path-one
+  0%
+    transform: translate(200px, 500px) scale(0)
+  100%
+    transform: translate(450px, 100px) scale(1)
+
+@keyframes path-two
+  0%
+    transform: translate(600px, 330px) scale(0)
+  100%
+    transform: translate(50px, 500px) scale(1)

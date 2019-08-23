@@ -1,7 +1,9 @@
-.nav
-  position: absolute
+#nav
+  position: fixed
   height: 75px
   width: 100%
+  z-index: 999
+  background-color: $primary
   @include respond-to(desktop)
     height: 100vh
     width: 50px
@@ -18,17 +20,18 @@
     width: 100px
     right: 0px
     cursor: pointer
-    z-index: 1
+    z-index: 3
+    background-color: inherit
     @include respond-to(desktop)
       display: none
 
     .hamburger
       position: absolute
-      left: 10px
+      left: 17.5px
       width: 65px
       transform: translateY(37.5px)
       height: 5px
-      background-color: $font-color
+      background-color: $on-primary
       transition: transform 300ms ease, background-color 300ms ease
 
       &::before, &::after
@@ -36,7 +39,7 @@
         position: absolute
         width: 65px
         height: 5px
-        background-color: $font-color
+        background-color: $on-primary
         transition: transform 300ms ease
 
       &::before
@@ -46,7 +49,7 @@
         transform: translateY(15px)
 
     &.active .hamburger
-      background-color: white
+      background-color: $primary
 
       &::before
         transform: translateY(0px) rotate(45deg)
@@ -56,9 +59,10 @@
 
   .nav-items
     width: 100%
-    background-color: white
+    background-color: inherit
     transform: translateY(-208px)
     transition: transform 300ms ease
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)
     @include respond-to(desktop)
       transform-origin: bottom left
       transform: translateY(-60px) rotate(90deg)
@@ -69,7 +73,7 @@
     .nav-item
       margin-left: 10px
       line-height: 50px
-      font-family: $playfair-display
+      font-family: $source-sans-pro
       font-size: 22px
       font-weight: 400
       @include respond-to(desktop)

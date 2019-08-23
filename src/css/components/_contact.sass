@@ -1,0 +1,63 @@
+#contact
+  height: 400px
+  width: 100%
+  background-color: $primary
+
+  @include respond-to(tablet-landscape)
+    height: 350px
+
+  .social-row
+    height: 350px
+    width: inherit
+    display: flex
+    flex-direction: column
+
+    @include respond-to(tablet-landscape)
+      flex-direction: row
+      height: 300px
+
+    .social-column
+      flex: 33.33%
+      @extend %center
+
+      .email-field
+        height: 30px
+        width: 0
+        padding: 0
+        border-radius: 4px
+        transition: ease 300ms width
+
+        &.active
+          padding: 4px
+          margin-right: 10px
+          width: 200px
+
+      .social-container
+        width: 60px
+        height: 60px
+        background-color: $secondary
+        z-index: 3
+        border-radius: 50%
+        cursor: pointer
+        transition: ease 300ms all
+        @extend %center
+
+        .github-logo, .email-logo, .linkedin-logo
+          color: $on-primary
+          font-size: 1.8rem
+
+        @include respond-to(tablet-landscape)
+          &:hover
+            transform: scale(1.2)
+
+  .copyright
+    height: 50px
+    width: 100%
+    line-height: 50px
+
+    & > h5
+      text-align: center
+      color: $on-primary
+
+    @include respond-to(tablet-landscape)
+      line-height: 0px

@@ -1,0 +1,11 @@
+.button
+  cursor: pointer
+  font-size: 1.2rem
+  width: 160px
+  height: 50px
+  border-radius: 30px
+  transition: ease 300ms border-radius
+
+  @include respond-to(tablet-landscape)
+    &:hover
+      border-radius: 0px
