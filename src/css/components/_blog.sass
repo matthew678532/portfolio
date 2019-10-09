@@ -16,6 +16,36 @@
     background-color: inherit
     transform: skewY(20deg)
     transform-origin: bottom left
+  
+  .blog-grid
+    display: none
+
+    @include respond-to(tablet-portrait)
+      background-color: aqua
+      width: 720px
+      height: 375px
+      position: absolute
+      top: 20%
+      left: 40px
+      display: flex
+      flex-wrap: nowrap
+
+      .blog-grid-item
+        width: 200px
+        height: 375px
+        margin: auto
+
+        .poster
+          height: 300px
+          background-color: white
+
+        .link-to-blog
+          position: relative
+          margin: 0 auto
+          display: block
+          margin-top: 12.5px
+          background-color: $secondary
+          color: $on-primary
 
   .blog-caption
     position: absolute

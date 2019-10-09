@@ -1,0 +1,8 @@
+<div class="blog-grid">
+    {% for post in site.posts limit:5 %}
+        <div class="blog-grid-item">
+            <img class="poster" src="/img/{{ post.image }}" alt="{{ post.image_alt }}">
+            <button class="button link-to-blog">{{ post.title }}</button>
+        </div>
+    {% endfor %}
+</div>
