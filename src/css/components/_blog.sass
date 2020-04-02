@@ -21,23 +21,47 @@
     display: none
 
     @include respond-to(tablet-portrait)
-      background-color: aqua
-      width: 720px
-      height: 375px
-      position: absolute
-      top: 20%
-      left: 40px
       display: flex
-      flex-wrap: nowrap
+      justify-content: flex-end
+      position: absolute
+      background-color: aqua
+      width: 50%
+      top: 25%
 
-      .blog-grid-item
-        width: 200px
-        height: 375px
-        margin: auto
+      .blog-grid-carousel
+        display: flex
+        justify-content: space-around
 
-        .poster
+        .blog-grid-item
+          width: 200px
           height: 300px
-          background-color: white
+          margin: auto
+
+          &:not(:last-child)
+            margin-right: 5px
+
+          .poster
+            height: inherit
+            background-color: white
+      
+      .blog-grid-controls
+        position: absolute
+        top: 300px
+        width: 200px
+
+        .controls-container
+          display: flex
+          justify-content: center
+          align-items: center
+          margin-top: 12.5px
+
+          .chevron
+            cursor: pointer
+            color: $on-secondary
+            font-size: 1.8rem
+
+            &:not(:last-child)
+              margin-right: 8px
 
         .link-to-blog
           position: relative
@@ -49,8 +73,15 @@
 
   .blog-caption
     position: absolute
-    right: 100px
-    top: 40%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 340px
+    height: 300px
+    right: 0
+    top: 25%
+    background-color: inherit
 
     .link-to-blog
       position: relative
@@ -59,3 +90,5 @@
       margin-top: 35px
       background-color: $secondary
       color: $on-primary
+
+  

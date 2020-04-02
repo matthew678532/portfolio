@@ -1,8 +1,17 @@
 <div class="blog-grid">
-    {% for post in site.posts limit:5 %}
+    <div class="blog-grid-carousel">
+        {% for post in site.posts limit:5 %}
         <div class="blog-grid-item">
             <img class="poster" src="/img/{{ post.image }}" alt="{{ post.image_alt }}">
-            <button class="button link-to-blog">{{ post.title }}</button>
         </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
+
+    <div class="blog-grid-controls">
+        <div class="controls-container">
+            <div class="fas fa-chevron-left chevron"></div>
+            <div class="fas fa-chevron-right chevron"></div>
+        </div>
+        <button class="button link-to-blog">Go</button>
+    </div>
 </div>
