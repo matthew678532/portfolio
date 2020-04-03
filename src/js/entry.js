@@ -3,5 +3,6 @@ define([
     'helper/util',
     'components/nav',
     'components/contact',
-    'components/blog'
+    'components/blog',
+    'components/projects'
 ])

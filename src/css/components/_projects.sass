@@ -9,27 +9,39 @@
 
   & > h3
     text-align: center
-    margin-bottom: 60px
+    position: absolute
+    top: 60px
 
   .play-icon
-    display: none
     cursor: pointer
 
+    &.clicked
+      animation-name: loading
+      animation-duration: 2s
+      animation-fill-mode: forwards
+
   .projects-container
-    display: flex
+    display: none
     align-items: center
+
+    &.clicked
+      animation-name: slide-up
+      animation-delay: 1s
+      animation-duration: 1s
+      animation-fill-mode: forwards
 
     .project
       padding: 30px
 
       .project-image
-        width: 120px
-        height: 166px
+        @extend %center
+        width: 150px
+        height: 150px
 
       .project-caption
-        margin-top: 30px
         text-align: center
-
+        width: 150px
+        line-height: 1.8
 
 .projects-skew
   width: 100%
@@ -39,3 +51,23 @@
   transform-origin: bottom left
   position: absolute
   z-index: 1
+
+@keyframes loading
+  0%
+    transform: rotate(0deg)
+    opacity: 1
+
+  50%
+    transform: rotate(-90deg)
+  
+  100%
+    transform: rotate(-90deg) translateX(230px)
+    opacity: 0
+
+@keyframes slide-up
+  from
+    transform: translateY(-100px)
+
+  to
+    transform: translateY(0px)
+    display: flex
