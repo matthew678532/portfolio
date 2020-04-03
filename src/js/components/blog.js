@@ -11,14 +11,16 @@ define('components/blog', ['jquery', 'helper/util'], function($, util) {
     function handleLeftClick() {
         if (position < $gridItems.length - 1) {
             position++
-            move(position)
+            move()
+            updateLink()
         }
     }
 
     function handleRightClick() {
         if (position > 0) {
             position--
-            move(position)
+            move()
+            updateLink()
         }
     }
 
@@ -31,13 +33,22 @@ define('components/blog', ['jquery', 'helper/util'], function($, util) {
         return translation
     }
 
-    function move(position) {
+    function move() {
         var translationStep = getTranslationStep()
         var translation = translationStep * position
 
         $gridCarousel.css('transform', 'translateX(' + translation + 'px)')
     }
 
+    function updateLink() {
+        var $activeGridItem = $($gridItems[position])
+        var link = $activeGridItem.find('span').text()
+        var $link = $('.link')
+
+        $link.attr('href', link)
+    }
+
+    updateLink()
     $($leftChevron).click(handleLeftClick)
     $($rightChevron).click(handleRightClick)
 

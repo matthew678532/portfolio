@@ -1,74 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/7c5bb77681.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/main.min.css" />
-    <script data-main="app" src="js/lib/require.js"></script>
-    <title>Matthew Birch</title>
-</head>
-<body>
-    <nav id="nav">
-        <div class="trigger">
-            <span class="hamburger"></span>
-        </div>
+    {% include head.html %}
 
-        <ul class="nav-items">
-            <li class="nav-item"><a class="active" href="#about">About</a></li>
-            <li class="nav-item"><a href="#projects">Projects</a></li>
-            <li class="nav-item"><a href="#blog">Blog</a></li>
-            <li class="nav-item"><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <body>
+        {{ content }}
+    </body>
 
-    <section id="about">
-        <div class="header"><h1 class="huge">Hi,<br>I'm<br>Matt..</h1></div>
-        <div class="portrait-container">
-            <div class="portrait-border"></div>
-            <div class="portrait"></div>
-        </div>
-    </section>
-
-    <div class="projects-skew"></div>
-    <section id="projects">
-        <h3>I help transform video experiences..</h3>
-        <div class="fas fa-play play-icon"></div>
-    </section>
-
-    <section id="blog">
-        <div class="blog-skew-left"></div>
-        <div class="blog-skew-right"></div>
-        
-        {% include blog_grid.html %}
-
-        <div class="blog-caption">
-            <h3 class="blog-title">And share all <br> that I learn..</h3>
-            <button class="button link-to-blog">Blog</button>
-        </div>
-    </section>
-
-    <div id="contact">
-        <div class="social-row">
-            <div class="social-column">
-                <a href="https://github.com/matthew678532" target="_blank" class="social-container">
-                    <div class="fab fa-github github-logo"></div>
-                </a>
-            </div>
-            <div class="social-column">
-                <input class="email-field" type="text" placeholder="Say hi..">
-                <div class="social-container email">
-                    <div class="fas fa-envelope-open-text email-logo"></div>
-                </div>
-            </div>
-            <div class="social-column">
-                <a href="https://www.linkedin.com/in/matthew-b/" target="_blank" class="social-container">
-                    <div class="fab fa-linkedin linkedin-logo"></div>
-                </a>
-            </div>
-        </div>
-
-        <div class="copyright"><h5>Matthew L. Birch &copy;</h5></div>
-    </div>
-</body>
+    {% include scripts.html %}
 </html>

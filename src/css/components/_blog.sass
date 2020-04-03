@@ -24,13 +24,13 @@
       display: flex
       justify-content: flex-end
       position: absolute
-      background-color: aqua
       width: 50%
       top: 25%
 
       .blog-grid-carousel
         display: flex
         justify-content: space-around
+        transition: ease 300ms transform
 
         .blog-grid-item
           width: 200px
@@ -58,10 +58,9 @@
           .chevron
             cursor: pointer
             color: $on-secondary
-            font-size: 1.8rem
 
             &:not(:last-child)
-              margin-right: 8px
+              margin-right: 12px
 
         .link-to-blog
           position: relative
@@ -90,5 +89,3 @@
       margin-top: 35px
       background-color: $secondary
       color: $on-primary
-
-  

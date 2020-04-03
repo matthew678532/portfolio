@@ -3,15 +3,16 @@
         {% for post in site.posts limit:5 %}
         <div class="blog-grid-item">
             <img class="poster" src="/img/{{ post.image }}" alt="{{ post.image_alt }}">
+            <span style="display: none">{{ post.url }}</span>
         </div>
         {% endfor %}
     </div>
 
     <div class="blog-grid-controls">
         <div class="controls-container">
-            <div class="fas fa-chevron-left chevron"></div>
-            <div class="fas fa-chevron-right chevron"></div>
+            <div class="fas fa-caret-left fa-3x chevron"></div>
+            <div class="fas fa-caret-right fa-3x chevron"></div>
         </div>
-        <button class="button link-to-blog">Go</button>
+        <a class="link" target="_blank" rel="noopener noreferrer"><button class="button link-to-blog">Go</button></a>
     </div>
 </div>

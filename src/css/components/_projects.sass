@@ -3,18 +3,33 @@
   height: 500px
   background-color: $secondary
   position: relative
-  padding-top: 90px
   z-index: 2
+  flex-direction: column
+  @extend %center
 
   & > h3
     text-align: center
+    margin-bottom: 60px
 
   .play-icon
-    font-size: 7.5rem
-    width: 100%
-    text-align: center
-    margin-top: 100px
+    display: none
     cursor: pointer
+
+  .projects-container
+    display: flex
+    align-items: center
+
+    .project
+      padding: 30px
+
+      .project-image
+        width: 120px
+        height: 166px
+
+      .project-caption
+        margin-top: 30px
+        text-align: center
+
 
 .projects-skew
   width: 100%
