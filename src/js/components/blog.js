@@ -9,7 +9,7 @@ define('components/blog', ['jquery', 'helper/util'], function($, util) {
     var position = 0
 
     function handleLeftClick() {
-        if (position < $gridItems.length - 1) {
+        if (position > 0) {
             position--
             move()
             updateLink()
@@ -17,7 +17,7 @@ define('components/blog', ['jquery', 'helper/util'], function($, util) {
     }
 
     function handleRightClick() {
-        if (position > 0) {
+        if (position < $gridItems.length - 1) {
             position++
             move()
             updateLink()
@@ -37,7 +37,9 @@ define('components/blog', ['jquery', 'helper/util'], function($, util) {
         var translationStep = getTranslationStep()
         var translation = translationStep * position
 
-        $gridCarousel.css('transform', 'translateX(' + translation + 'px)')
+        console.log("Translation = ", translation)
+
+        $gridCarousel.css('transform', 'translateX(' + -Math.abs(translation) + 'px)')
     }
 
     function updateLink() {

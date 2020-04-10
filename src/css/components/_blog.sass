@@ -18,24 +18,27 @@
 
     .blog-grid-carousel
       @extend %center
+      overflow: hidden
 
-      .blog-grid-items
-        @extend %center
-        justify-content: flex-start
-        width: 200px
+      .blog-grid-items-mask
         overflow: hidden
-        translation: transform 300ms ease 
+        width: 200px
 
-        .blog-grid-item
-          width: inherit
+        .blog-grid-items
+          @extend %center
+          justify-content: flex-start
+          transition: transform 300ms ease 
 
-          .poster
-            height: inherit
-            background-color: white
-        
-          & > p
-            width: 200px
-            margin-top: 20px
+          .blog-grid-item
+            width: inherit
+
+            .poster
+              height: inherit
+              background-color: white
+          
+            & > p
+              width: 200px
+              margin-top: 20px
 
     .chevron
       margin-right: 10px

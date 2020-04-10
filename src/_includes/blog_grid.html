@@ -1,14 +1,16 @@
 <div class="blog-grid">
     <div class="blog-grid-carousel">
         <div class="fas fa-caret-left fa-3x chevron"></div>
-        <div class="blog-grid-items">
-            {% for post in site.posts limit:5 %}
-            <div class="blog-grid-item">
-                <img class="poster" src="/img/{{ post.image }}" alt="{{ post.image_alt }}">
-                <span style="display: none">{{ post.url }}</span>
-                {{ post.excerpt | truncate: 50 }}
+        <div class="blog-grid-items-mask">
+            <div class="blog-grid-items">
+                {% for post in site.posts limit:5 %}
+                <div class="blog-grid-item">
+                    <img class="poster" src="/img/{{ post.image }}" alt="{{ post.image_alt }}">
+                    <span style="display: none">{{ post.url }}</span>
+                    {{ post.excerpt | truncate: 50 }}
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
         <div class="fas fa-caret-right fa-3x chevron"></div>
     </div>
