@@ -3,87 +3,75 @@ layout: default
 permalink: /
 ---
 
-<nav id="nav">
-    <div class="trigger">
-        <span class="hamburger"></span>
-    </div>
-
-    <ul class="nav-items">
-        <li class="nav-item"><a class="active" href="#about">About</a></li>
-        <li class="nav-item"><a href="#projects">Projects</a></li>
-        <li class="nav-item"><a href="#blog">Blog</a></li>
-        <li class="nav-item"><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-
-<section id="about">
-    <div class="header"><h1 class="huge">Hi,<br>I'm<br>Matt..</h1></div>
-    <div class="portrait-container">
-        <div class="portrait-border"></div>
-        <div class="portrait"></div>
-    </div>
-</section>
-
-<div class="projects-skew"></div>
-<section id="projects">
-    <h3>I help transform video experiences..</h3>
-    <div class="fas fa-play fa-6x play-icon"></div>
-
-    <div class="projects-container">
-        <div class="project">
-            <div class="project-image">
-                <img style="width: 150px; height: 54px;" src="img/rtl.png" />
-            </div>
-            <p class="project-caption">RTL project.. blah blah blah blah blah blah</p>
+<div class="body-container">
+    <nav id="nav">
+        <div class="trigger">
+            <span class="hamburger"></span>
         </div>
-
-        <div class="project">
-            <div class="project-image">
-                <img style="width: 60px; height: 83px;" src="img/all4.png" />
-            </div>
-            <p class="project-caption">All 4 project.. blah blah blah blah blah blah</p>
-        </div>
-
-        <div class="project">
-            <div class="project-image">
-                <img style="width: 150px; height: 54px;" src="img/nrk.png" />
-            </div>
-            <p class="project-caption">Nrk project.. blah blah blah blah blah blah</p>
-        </div>
-    </div>
-</section>
-
-<section id="blog">
-    <div class="blog-skew-left"></div>
-    <div class="blog-skew-right"></div>
     
-    {% include blog_grid.html %}
-
-    <div class="blog-caption">
-        <h3 class="blog-title">And share all <br> that I learn..</h3>
-        <a href="/blog" target="_blank" rel="noopener noreferrer"><button class="button link-to-blog">Blog</button></a>
-    </div>
-</section>
-
-<div id="contact">
-    <div class="social-row">
-        <div class="social-column">
-            <a href="https://github.com/matthew678532" target="_blank" class="social-container">
-                <div class="fab fa-github github-logo"></div>
-            </a>
+        <ul class="nav-items">
+            <li class="nav-item"><a class="active" href="#about">About</a></li>
+            <li class="nav-item"><a href="#projects">Projects</a></li>
+            <li class="nav-item"><a href="#blog">Blog</a></li>
+            <li class="nav-item"><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section id="about">
+        <div class="header">
+            <h3 class="section-title">Hello</h3>
+            <h1 class="huge">I'm Matt</h1>
+            <p class="section-text">A Software Engineer working out of the big smoke. I love getting hands on with technology, and developing robust solutions for all kinds of engagements.</p>
         </div>
-        <div class="social-column">
-            <input class="email-field" type="text" placeholder="Say hi..">
-            <div class="social-container email">
-                <div class="fas fa-envelope-open-text email-logo"></div>
+
+        <div class="portrait-container">
+            <div class="portrait"></div>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <div class="projects-grid">
+            <div class="project-image"></div>
+            <div class="project-image"></div>
+            <div class="project-image"></div>
+        </div>
+
+        <div class="projects-text">
+            <h3 class="section-title">Projects</h3>
+            <p class="section-text">From All4 to TV Now, I have worked across a host of on-demand services helping to shape those cosy nights in through interactive experiences.</p>
+        </div>
+    </section>
+    
+    <section id="blog">
+        <div class="blog-text">
+            <h3 class="section-title">Blog</h3>
+            <p class="section-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <a class="button" href="/blog" target="_blank" rel="noopener noreferrer">Blog</a>
+        </div>
+
+        {% include blog_grid.html %}
+    </section>
+    
+    <div id="contact">
+        <div class="social-row">
+            <div class="social-column">
+                <a href="https://github.com/matthew678532" target="_blank" class="social-container">
+                    <div class="fab fa-github github-logo"></div>
+                </a>
+            </div>
+            <div class="social-column">
+                <input class="email-field" type="text" placeholder="Say hi..">
+                <div class="social-container email">
+                    <div class="fas fa-envelope-open-text email-logo"></div>
+                </div>
+            </div>
+            <div class="social-column">
+                <a href="https://www.linkedin.com/in/matthew-b/" target="_blank" class="social-container">
+                    <div class="fab fa-linkedin linkedin-logo"></div>
+                </a>
             </div>
         </div>
-        <div class="social-column">
-            <a href="https://www.linkedin.com/in/matthew-b/" target="_blank" class="social-container">
-                <div class="fab fa-linkedin linkedin-logo"></div>
-            </a>
-        </div>
+    
+        <div class="copyright"><h5>Matthew L. Birch &copy;</h5></div>
     </div>
-
-    <div class="copyright"><h5>Matthew L. Birch &copy;</h5></div>
 </div>

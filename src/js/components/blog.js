@@ -3,14 +3,14 @@ define('components/blog', ['jquery', 'helper/util'], function($, util) {
     var $leftChevron = $chevrons[0]
     var $rightChevron = $chevrons[1]
 
-    var $gridCarousel = $('.blog-grid-carousel')
+    var $gridCarousel = $('.blog-grid-items')
     var $gridItems = $('.blog-grid-item')
 
     var position = 0
 
     function handleLeftClick() {
         if (position < $gridItems.length - 1) {
-            position++
+            position--
             move()
             updateLink()
         }
@@ -18,7 +18,7 @@ define('components/blog', ['jquery', 'helper/util'], function($, util) {
 
     function handleRightClick() {
         if (position > 0) {
-            position--
+            position++
             move()
             updateLink()
         }

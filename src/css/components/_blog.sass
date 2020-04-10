@@ -1,91 +1,46 @@
 #blog
-  width: 100%
   height: 600px
-  background-color: $highlight
-  display: flex
-  position: relative
+  @extend %center
 
-  .blog-skew-left
+  .blog-text
     flex: 50%
-    background-color: inherit
-    transform: skewY(-20deg)
-    transform-origin: bottom right
+    flex-direction: column
+    @extend %center
 
-  .blog-skew-right
-    flex: 50%
-    background-color: inherit
-    transform: skewY(20deg)
-    transform-origin: bottom left
+    .section-title, .section-text
+      width: 400px
+      margin-bottom: 20px
   
   .blog-grid
-    display: none
+    flex: 50%
+    flex-direction: column
+    @extend %center
 
-    @include respond-to(tablet-portrait)
-      display: flex
-      justify-content: flex-end
-      position: absolute
-      width: 50%
-      top: 25%
+    .blog-grid-carousel
+      @extend %center
 
-      .blog-grid-carousel
-        display: flex
-        justify-content: space-around
-        transition: ease 300ms transform
+      .blog-grid-items
+        @extend %center
+        justify-content: flex-start
+        width: 200px
+        overflow: hidden
+        translation: transform 300ms ease 
 
         .blog-grid-item
-          width: 200px
-          height: 300px
-          margin: auto
-
-          &:not(:last-child)
-            margin-right: 5px
+          width: inherit
 
           .poster
             height: inherit
             background-color: white
-      
-      .blog-grid-controls
-        position: absolute
-        top: 300px
-        width: 200px
+        
+          & > p
+            width: 200px
+            margin-top: 20px
 
-        .controls-container
-          display: flex
-          justify-content: center
-          align-items: center
-          margin-top: 12.5px
-
-          .chevron
-            cursor: pointer
-            color: $on-secondary
-
-            &:not(:last-child)
-              margin-right: 12px
-
-        .link-to-blog
-          position: relative
-          margin: 0 auto
-          display: block
-          margin-top: 12.5px
-          background-color: $secondary
-          color: $on-primary
-
-  .blog-caption
-    position: absolute
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    width: 340px
-    height: 300px
-    right: 0
-    top: 25%
-    background-color: inherit
-
-    .link-to-blog
-      position: relative
-      margin: 0 auto
-      display: block
-      margin-top: 35px
-      background-color: $secondary
-      color: $on-primary
+    .chevron
+      margin-right: 10px
+      margin-left: 10px
+      cursor: pointer
+    
+    .button
+      margin-top: 20px

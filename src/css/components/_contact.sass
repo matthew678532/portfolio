@@ -1,20 +1,11 @@
 #contact
-  height: 400px
-  width: 100%
-  background-color: $primary
-
-  @include respond-to(tablet-landscape)
-    height: 350px
+  height: 600px
 
   .social-row
     height: 350px
     width: inherit
     display: flex
-    flex-direction: column
-
-    @include respond-to(tablet-landscape)
-      flex-direction: row
-      height: 300px
+    flex-direction: row
 
     .social-column
       flex: 33.33%
@@ -46,10 +37,6 @@
           color: $on-primary
           font-size: 1.8rem
 
-        @include respond-to(tablet-landscape)
-          &:hover
-            transform: scale(1.2)
-
   .copyright
     height: 50px
     width: 100%
@@ -58,6 +45,3 @@
     & > h5
       text-align: center
       color: $on-primary
-
-    @include respond-to(tablet-landscape)
-      line-height: 0px
