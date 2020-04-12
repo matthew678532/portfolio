@@ -1,8 +1,7 @@
 define([
     'jquery',
-    'masonry',
     'helper/util',
-    'components/nav',
+    'components/navigation',
     'components/contact',
     'components/blog'
 ])

@@ -1,16 +1,32 @@
 =respond-to($media)
-  @if $media == tablet-portrait
-    @media only screen and ($tablet-portrait)
-      @content
-
-  @else if $media == tablet-landscape
-    @media only screen and ($tablet-landscape)
+  @if $media == desktop-large
+    @media only screen and ($desktop-large)
       @content
 
   @else if $media == desktop
     @media only screen and ($desktop)
       @content
 
-  @else
-    @media only screen and ($desktop-large)
+  @else if $media == tablet-landscape
+    @media only screen and ($tablet-landscape)
       @content
+
+  @else
+    @media only screen and ($tablet-portrait)
+      @content
+
+=fade-in-animation()
+  animation-name: fade-in
+  animation-duration: 1500ms
+  animation-fill-mode: forwards
+  animation-timing-function: ease
+
+@keyframes fade-in
+  0%
+    opacity: 0
+    transform: translateY(200px)
+
+  100%
+    opacity: 1
+    transform: translateY(0px)
+

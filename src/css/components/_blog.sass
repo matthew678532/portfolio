@@ -1,11 +1,19 @@
 #blog
-  height: 600px
+  min-height: 600px
   @extend %center
+
+  @include respond-to($tablet-portrait)
+    flex-direction: column
+    min-height: 700px
+    margin-bottom: 50px
 
   .blog-text
     flex: 50%
     flex-direction: column
     @extend %center
+
+    .section-title
+      color: #E3F2FD
 
     .section-title, .section-text
       width: 400px

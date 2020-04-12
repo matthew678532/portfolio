@@ -1,47 +1,53 @@
 #contact
-  height: 600px
+  min-height: 600px
+  @extend %center
 
-  .social-row
-    height: 350px
-    width: inherit
-    display: flex
-    flex-direction: row
+  @include respond-to($tablet-portrait)
+    flex-direction: column-reverse
 
-    .social-column
-      flex: 33.33%
-      @extend %center
+  .contact-form
+    flex: 50%
+    @extend %center
 
-      .email-field
-        height: 30px
-        width: 0
-        padding: 0
-        border-radius: 4px
-        transition: ease 300ms width
+    form
+      width: 500px
+      padding: 40px
 
-        &.active
-          padding: 4px
+      input::placeholder, textarea::placeholder
+        color: $on-primary
+
+      a
+        display: block
+        margin: 0 auto
+
+      input[type=text], input[type=email], textarea
+        width: 100%
+        border: 1px solid $on-primary
+        padding: 10px
+        margin-bottom: 10px
+
+      textarea
+        height: 150px
+        resize: none
+
+  .contact-text
+    flex: 50%
+    flex-direction: column
+    @extend %center
+
+    .section-title
+      color: #E1F5FE
+
+    .section-title, .section-text
+      width: 400px
+      margin-bottom: 20px
+
+    .socials
+      width: 400px
+      margin-bottom: 20px
+
+      a
+        color: $primary
+
+        &:not(:last-child)
           margin-right: 10px
-          width: 200px
-
-      .social-container
-        width: 60px
-        height: 60px
-        background-color: $secondary
-        z-index: 3
-        border-radius: 50%
-        cursor: pointer
-        transition: ease 300ms all
-        @extend %center
-
-        .github-logo, .email-logo, .linkedin-logo
-          color: $on-primary
-          font-size: 1.8rem
-
-  .copyright
-    height: 50px
-    width: 100%
-    line-height: 50px
-
-    & > h5
-      text-align: center
-      color: $on-primary

@@ -1,13 +1,19 @@
 #projects
-  height: 600px
+  min-height: 600px
   @extend %center
 
+  @include respond-to($tablet-portrait)
+    flex-direction: column-reverse
+    min-height: 700px
+
   .projects-grid
-    display: flex
     flex-flow: row wrap
-    justify-content: flex-start
+    @extend %center
     flex: 50%
     padding: 20px
+
+    &.load
+      @include fade-in-animation()
 
     &:after
       clear: both
@@ -15,7 +21,6 @@
       display: block
 
     .project-image
-      background-position: center
       background-size: cover
       width: 320px
       height: 180px
@@ -44,7 +49,11 @@
     flex-direction: column
     @extend %center
 
+    &.load
+      @include fade-in-animation()
+
     .section-title
+      color: #E8EAF6
       margin-bottom: 20px
 
     .section-title, .section-text
