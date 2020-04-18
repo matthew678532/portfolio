@@ -44,6 +44,9 @@
       &:nth-child(5n-1)
         width: 240px
 
+    @include respond-to($tablet-portrait)
+      padding: 0px
+
   .projects-text
     flex: 50%
     flex-direction: column
@@ -58,3 +61,12 @@
 
     .section-title, .section-text
       width: 400px
+
+      @include respond-to($tablet-portrait)
+        width: 300px
+
+    @include respond-to($tablet-portrait)
+      margin-bottom: 30px
+
+  @include respond-to($tablet-portrait)
+    margin-bottom: 30px

@@ -12,9 +12,17 @@
     flex-direction: column
     @extend %center
 
+    .huge
+      @include respond-to($tablet-portrait)
+        font-size: 5rem
+
+
     & > p, .section-title, .huge
-      width: 500px
       @include fade-in-animation()
+      width: 500px
+
+      @include respond-to($tablet-portrait)
+        width: 300px
 
   .portrait-container
     @extend %center

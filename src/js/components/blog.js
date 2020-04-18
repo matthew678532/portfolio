@@ -53,10 +53,4 @@ define('components/blog', ['jquery', 'helper/util'], function($, util) {
     updateLink()
     $($leftChevron).click(handleLeftClick)
     $($rightChevron).click(handleRightClick)
-
-    // Main
-    // if (util.getViewportDimensions() > 900) {
-    //     $leftChevron.click(handleLeftClick)
-    //     $rightChevron.click(handleRightClick)
-    // }
 })

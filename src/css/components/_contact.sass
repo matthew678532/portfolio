@@ -14,7 +14,7 @@
       padding: 40px
 
       input::placeholder, textarea::placeholder
-        color: $on-primary
+        color: $primary
 
       a
         display: block
@@ -22,13 +22,17 @@
 
       input[type=text], input[type=email], textarea
         width: 100%
-        border: 1px solid $on-primary
         padding: 10px
         margin-bottom: 10px
+        background-color: #ECECEC
 
       textarea
         height: 150px
         resize: none
+
+      @include respond-to($tablet-portrait)
+        width: 300px
+        padding: 0px
 
   .contact-text
     flex: 50%
@@ -40,6 +44,11 @@
 
     .section-title, .section-text
       width: 400px
+
+      @include respond-to($tablet-portrait)
+        width: 300px
+
+    .section-title, .section-text:not(:last-child)
       margin-bottom: 20px
 
     .socials
@@ -47,7 +56,10 @@
       margin-bottom: 20px
 
       a
-        color: $primary
+        color: $secondary
 
         &:not(:last-child)
           margin-right: 10px
+
+      @include respond-to($tablet-portrait)
+        width: 300px

@@ -1,58 +1,56 @@
-.blog-container
+.post-container
+  background-color: white
+  width: 700px
+  margin: 60px auto 0px auto
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
 
-  .offset
-    height: 50px
-    background-color: #E0E0E0
+  .post-title-treatment
+    padding: 40px
 
-  .blog-section
-    padding: 10px
-    width: 600px
+  .post-category
+    text-transform: uppercase
+    font-family: $source-sans-pro
+    color: #E8EAF6
+
+  .post-title
+    color: $secondary
+    margin-bottom: 20px
+
+  .post-subtitle
+    font-family: $source-sans-pro
+    margin-bottom: 20px
+
+  .meta
+    @extend %center
+
+    .post-date, .post-author, .post-author-name
+      flex: 33.33%
+      text-align: center
+
+    .post-author-image
+      width: 100px
+      height: 100px
+      border-radius: 50%
+      background-position: 50%
+      background-size: cover 
+
+  .separator
+    @extend %center
+
+  .post-content
+    padding: 40px
+
+    p
+      line-height: 1.8
+
+  span
     margin: 0 auto
-    background-color: $on-primary
+    width: 300px
+    height: 2px
+    background-color: #E8EAF6
 
-    .blog-title
-      margin-bottom: 20px
-
-    .blog-content > p
-      margin-bottom: 20px
-
-    .post
-      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
-      padding: 10px
-      margin-bottom: 10px
-    
-      .post-title
-        margin-bottom: 5px
-
-    .post-title
-        margin-bottom: 10px
-
-    .post-subtitle
-        margin-bottom: 10px
-        font-family: $source-sans-pro
-        color: #616161
-
-    .post-date-container
-        display: flex
-        justify-content: space-between
-        align-items: center
-        margin-bottom: 10px
-
-        .post-date-block
-            width: 65%
-            border-right: 5px solid transparent
-            border-top: 5px solid $secondary
-
-        .post-date
-            font-style: italic
-    
-    .post-content
-        width: 60%
-        line-height: 1.8
-
-        &:first-letter
-            font-size: 1.6rem
-
-  
+  @include respond-to($tablet-portrait)
+    width: auto
+    margin: auto
 
 

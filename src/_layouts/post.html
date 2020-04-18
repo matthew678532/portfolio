@@ -2,16 +2,21 @@
 layout: default
 ---
 
-<div class="blog-container">
-    <div class="offset"></div>
-    <div class="blog-section">
-        <h1 class="post-title">{{ page.title }}</h1>
+<div class="post-container">
+    <div class="post-title-treatment">
+        <h3 class="post-category">{{ page.category }}</h3>
+        <h1 class="large post-title">{{ page.title }}</h1>
         <h4 class="post-subtitle">{{ page.subtitle }}</h4>
-        <div class="post-date-container">
-            <div class="post-date-block"></div>
-            <div class="post-date">{{ page.date }}</div>
+        <div class="meta">
+            <p class="post-date">{{ page.date }}</p>
+            <div class="post-author">
+                <img class="post-author-image" src="{{ page.author_image | prepend: site.url }}" />
+            </div>
+            <p class="post-author-name">{{ page.author }}</p>
         </div>
-        <div class="post-author">{{ page.author }}</div>
-        <div class="post-content">{{ content }}</div>
     </div>
+
+    <span class="separator"></span>
+
+    <div class="post-content">{{ content }}</div>
 </div>

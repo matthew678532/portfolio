@@ -11,8 +11,12 @@
     @media only screen and ($tablet-landscape)
       @content
 
-  @else
+  @else if $media == tablet-portrait
     @media only screen and ($tablet-portrait)
+      @content
+
+  @else
+    @media only screen and ($mobile)
       @content
 
 =fade-in-animation()
