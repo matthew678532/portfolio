@@ -8,15 +8,16 @@ layout: default
         <h1 class="large post-title">{{ page.title }}</h1>
         <h4 class="post-subtitle">{{ page.subtitle }}</h4>
         <div class="meta">
-            <p class="post-date">{{ page.date }}</p>
-            <div class="post-author">
-                <img class="post-author-image" src="{{ page.author_image | prepend: site.url }}" />
-            </div>
-            <p class="post-author-name">{{ page.author }}</p>
+            <img class="post-author-image" src="{{ page.author_image | prepend: site.url }}" />
+            <p class="post-meta">By {{ page.author }}, {{ page.date }}</p>
         </div>
     </div>
 
-    <span class="separator"></span>
+    <div class="separator">
+        <span class="line"></span>
+        <span class="fas fa-caret-right fa-3x chevron"></span>
+        <span class="line"></span>
+    </div>
 
     <div class="post-content">{{ content }}</div>
 </div>
