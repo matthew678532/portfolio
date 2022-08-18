@@ -5,7 +5,10 @@ const config: GatsbyConfig = {
     title: `new`,
     siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: ["gatsby-plugin-styled-components"]
+  plugins: [
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-root-import"
+  ]
 };
 
 export default config;
