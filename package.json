@@ -18,7 +18,7 @@
   "dependencies": {
     "@fontsource/old-standard-tt": "^4.5.8",
     "@fontsource/open-sans": "^4.5.11",
-    "@fontsource/silkscreen": "^4.5.0",
+    "@fontsource/roboto-serif": "^4.5.7",
     "babel-plugin-styled-components": "^2.0.6",
     "gatsby": "^4.11.1",
     "gatsby-plugin-styled-components": "^5.11.0",

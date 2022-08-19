@@ -9,15 +9,18 @@ const PageDetails = () => {
       <Text
         fontFamily='Old Standard TT'
         textTransform='uppercase'
-        fontSize='12px'>Volume LXXXI-NO 107</Text>
+        fontSize='12px'
+        margin='10px'>Volume LXXXI-NO 107</Text>
       <Text
         fontFamily='Old Standard TT'
         textTransform='uppercase'
-        fontSize='12px'>London thursday morning 18 2022-twenty pages</Text>
+        fontSize='12px'
+        margin='10px'>London thursday morning 18 2022-twenty pages</Text>
       <Text
         fontFamily='Old Standard TT'
         textTransform='uppercase'
-        fontSize='12px'>Price: free</Text>
+        fontSize='12px'
+        margin='10px'>Price: free</Text>
     </Grid>
   );
 };

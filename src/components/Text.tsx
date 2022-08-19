@@ -4,8 +4,9 @@ const Text = styled.p`
   font-family: ${props => props.fontFamily || 'sans-serif'};
   font-size: ${props => props.fontSize};
   text-transform: ${props => props.textTransform || 'none'};
-  margin: ${props => props.noMargin && 0};
+  margin: ${props => props.margin || 0};
   font-weight: ${props => props.fontWeight || 500};
+  color: ${props => props.color || '#000'};
 `;
 
 export default Text;
