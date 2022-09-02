@@ -6,8 +6,16 @@ const config: GatsbyConfig = {
     siteUrl: `https://www.yourdomain.tld`
   },
   plugins: [
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-root-import"
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-root-import',
+    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'content',
+        path: './src/content'
+      }
+    }
   ]
 };
 

@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Grid from 'components/Grid';
-import Text from 'components/Text';
 
 const Posts = ({
   items
