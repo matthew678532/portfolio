@@ -33,7 +33,8 @@ const PostDetail = ({
   borderStyle,
   display,
   cursor,
-  callback
+  callback,
+  html
 }) => {
   return (
     <Container
@@ -44,13 +45,13 @@ const PostDetail = ({
       borderStyle={borderStyle}
       display={display}
       cursor={cursor}
-      onClick={e => callback(e, { title, content })}>
+      onClick={e => callback(e, { title, html })}>
       <Text
         fontFamily={fontStyles[getRandomNumber(3)]}
         margin='10px 0 10px 0'
         fontWeight='700'
       >{ title }</Text>
-      <Text fontFamily='Open Sans, sans-serif'>{ content }</Text>
+      <div dangerouslySetInnerHTML={{ __html: content }}></div>
     </Container>
   );
 };

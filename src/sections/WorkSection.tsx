@@ -15,7 +15,7 @@ const postSizes = {
     width: '200px'
   },
   largePost: {
-    height: '500px',
+    height: '285px',
     width: '400px'
   }
 };
@@ -28,7 +28,8 @@ const parseNodes = (nodes, callback)  => {
   nodes.forEach(item => {
     const {
       frontmatter: { category, title },
-      excerpt
+      excerpt,
+      html
     } = item;
     const Post = {
       Component: PostDetail,
@@ -41,7 +42,8 @@ const parseNodes = (nodes, callback)  => {
         borderStyle: 'dashed',
         display: '-webkit-box',
         cursor: 'pointer',
-        callback
+        callback,
+        html
       }
     };
 
@@ -81,7 +83,7 @@ const WorkSection = () => {
         size={largePost}
         overflow='scroll'
         title={largePostDetails.title}
-        content={largePostDetails.content}
+        content={largePostDetails.html}
         callback={noop} />
       <Posts
         items={projects}
