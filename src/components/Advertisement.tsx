@@ -6,7 +6,7 @@ const Advertisement = styled.div`
   align-items: center;
   height: 50px;
   width: 150px;
-  background-color: #000;
+  border: 1px solid #000;
   cursor: pointer;
 `;
 

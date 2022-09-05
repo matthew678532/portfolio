@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Text from 'components/Text';
 
 const Container = styled.section`
+  height: ${props => props.height || 'auto'};
   width: ${props => props.width || 'auto'};
   overflow: ${props => props.overflow || 'visible'};
   display: ${props => props.display || 'block'};

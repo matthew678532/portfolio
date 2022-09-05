@@ -14,11 +14,11 @@ const socialImagesSize = {
   width: '20px'
 };
 
-const TitleSection = () => {
-  const onExternalLinkClick = (e, url) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
+const onExternalLinkClick = (e, url) => {
+  window.open(url, '_blank', 'noopener,noreferrer');
+};
 
+const TitleSection = () => {
   return (
     <Grid
       justifyContent='space-around'
@@ -28,10 +28,10 @@ const TitleSection = () => {
         <Text
           fontFamily='Open Sans'
           textTransform='uppercase'
-          color='#fff'
+          color='#000'
           fontSize='0.6rem'
           margin='0 5px 0 5px'>
-          Control your logs this way...
+          Npm log utility
         </Text>
       </Advertisement>
       <Text

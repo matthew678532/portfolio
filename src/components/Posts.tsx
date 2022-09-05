@@ -3,23 +3,24 @@ import React from 'react';
 import Grid from 'components/Grid';
 
 const Posts = ({
-  items
+  items,
+  itemHeight
 }) => {
   return (
-    <Grid
-      height='500px'
-      width='200px'
-      overflow='scroll'
-      flexDirection='column'
-      justifyContent='flex-start'
-    >
-      {
-        items.map(item => {
-          const { Component, params } = item;
-          return <Component { ...params } />;
-        })
-      }
-    </Grid>
+    <div style={{ overflowY: 'auto', height: `${itemHeight * 2}px` }}>
+      <Grid
+        width='200px'
+        flexDirection='column'
+        justifyContent='flex-start'
+        align-items='flex-start' >
+        {
+          items.map(item => {
+            const { Component, params } = item;
+            return <Component { ...params } />;
+          })
+        }
+      </Grid>
+    </div>
   );
 };
 

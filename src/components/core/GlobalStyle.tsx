@@ -9,6 +9,12 @@ const GlobalStyle = createGlobalStyle`
 
   html, body {
     background-color: black;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 `;
 

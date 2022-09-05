@@ -6,9 +6,12 @@ import Grid from 'components/Grid';
 import Posts from 'components/Posts';
 import PostDetail from 'components/PostDetail';
 
+const noop = () => {};
+const smallPostHeight = 135;
+
 const postSizes = {
   smallPost: {
-    height: '166.6px',
+    height: `${smallPostHeight}px`,
     width: '200px'
   },
   largePost: {
@@ -38,7 +41,7 @@ const parseNodes = (nodes, callback)  => {
         borderStyle: 'dashed',
         display: '-webkit-box',
         cursor: 'pointer',
-        callback 
+        callback
       }
     };
 
@@ -72,14 +75,17 @@ const WorkSection = () => {
     >
       <Posts
         items={blogs}
+        itemHeight={smallPostHeight}
       />
       <PostDetail
         size={largePost}
         overflow='scroll'
         title={largePostDetails.title}
-        content={largePostDetails.content} />
+        content={largePostDetails.content}
+        callback={noop} />
       <Posts
         items={projects}
+        itemHeight={smallPostHeight}
       />
     </Grid>
   );
