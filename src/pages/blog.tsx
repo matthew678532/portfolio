@@ -4,9 +4,9 @@ import { navigate } from 'gatsby';
 import Core from 'core/Core';
 
 import Grid from 'components/Grid';
-import GridItem from 'components/GridItem';
+import GridItem from 'groups/GridItem';
 import Label from 'components/Label';
-import BlogContainer from 'components/BlogContainer';
+import BlogContainer from 'groups/BlogContainer';
 
 import { useContent } from 'hooks/useContent';
 

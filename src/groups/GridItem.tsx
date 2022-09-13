@@ -4,7 +4,6 @@ import Grid from 'components/Grid';
 import Image from 'components/Image';
 import Text from 'components/Text';
 import Label from 'components/Label';
-import Link from 'components/Link';
 
 const fallbackImageSrc = 'https://i.stack.imgur.com/frlIf.png';
 

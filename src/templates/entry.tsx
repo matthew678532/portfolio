@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import BlogContainer from 'components/BlogContainer';
+import BlogContainer from 'groups/BlogContainer';
 
 const Entry = ({ data }) => {
   console.info('Data = ', data);

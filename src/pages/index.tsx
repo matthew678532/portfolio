@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 import Core from 'core/Core';
 
-import Card from 'components/Card';
+import Card from 'groups/Card';
 
-const Page = styled.section`
+const Page = styled.div`
   height: 100vh;
   width: 100vw;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
