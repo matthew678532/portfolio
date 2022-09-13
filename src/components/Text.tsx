@@ -7,6 +7,7 @@ const Text = styled.p`
   margin: ${props => props.margin || 0};
   font-weight: ${props => props.fontWeight || 500};
   color: ${props => props.color || '#000'};
+  line-height: ${props => props.lineHeight || 'normal'};
 `;
 
 export default Text;
