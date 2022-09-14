@@ -4,7 +4,6 @@ import { graphql } from 'gatsby';
 import BlogContainer from 'groups/BlogContainer';
 
 const Entry = ({ data }) => {
-  console.info('Data = ', data);
   const { markdownRemark } = data;
   const { html, frontmatter } = markdownRemark;
   const { title, slug, category, stack } = frontmatter;

@@ -4,7 +4,7 @@ import { navigate } from 'gatsby';
 import Core from 'core/Core';
 
 import Grid from 'components/Grid';
-import GridItem from 'groups/GridItem';
+import Post from 'groups/Post';
 import Label from 'components/Label';
 import BlogContainer from 'groups/BlogContainer';
 
@@ -23,14 +23,15 @@ const parseNodes = (nodes, callback) => {
 
   nodes.forEach(item => {
     const { excerpt, frontmatter } = item;
-    const { slug } = frontmatter;
+    const { slug, stack } = frontmatter;
 
     const BlogPost = {
-      Component: GridItem,
+      Component: Post,
       props: {
         imageSrc: '',
         excerpt,
         slug,
+        stack,
         callback
       }
     };
@@ -56,7 +57,7 @@ const Blog = () => {
         <Grid
           justifyContent='flex-start'
           gap='1rem'
-          margin='0 0 1rem 0'
+          style={{ margin: '0 0 1rem 0' }}
         >
           { filters.map(({ Component, props }) => <Component {...props}>html/css</Component>) }
         </Grid>

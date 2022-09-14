@@ -1,7 +1,7 @@
 ---
 title: Test Project
 category: projects
-stack: HTML & CSS
+stack: html/css
 slug: test-project
 ---
 

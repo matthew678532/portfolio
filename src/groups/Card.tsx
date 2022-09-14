@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Text from 'components/Text';
+import { Header, Standard } from 'components/Text';
+
 import Image from 'components/Image';
 import Grid from 'components/Grid';
 import Link from 'components/Link';
@@ -12,22 +13,15 @@ import CodepenImage from 'images/codepen-brands.svg';
 
 import Avatar from 'images/avatar.png';
 
-const CardContainer = styled.div`
+const CardContainer = styled(Grid)`
   background-color: rgba(255, 255, 255, .15);  
   backdrop-filter: blur(5px);
   height: 60%;
   width: 50%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 20px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 `;
 
-const socialImagesSize = {
-  height: '20px',
-  width: '20px'
-};
+const socialImagesSize = { height: '1.25rem', width: '1.25rem' };
 
 const onExternalLinkClick = (e, url) => {
   window.open(url, '_blank', 'noopener,noreferrer');
@@ -35,55 +29,51 @@ const onExternalLinkClick = (e, url) => {
 
 const Card = () => {
   return (
-    <CardContainer>
+    <CardContainer
+      justifyContent='space-around'
+      alignItems='center'
+    >
       <Grid
-        flexDirection='column'
-        flex='1'
-        gap='20px'
-      >
+        justifyContent='center'
+        alignItems='center'
+        flex='1'>
         <Image
           src={Avatar}
-          size={{
+          style={{
+            borderRadius: "50%",
             width: "50%",
             height: "100%"
           }}
-          style={{ borderRadius: "50%" }}
         />
       </Grid>
       <Grid
         flexDirection='column'
         flex='1'
-        gap='20px'
-        alignItems='flex-start'
-        margin='0 10px 0 10px'
-      >
-        <Text
-          fontFamily='Abril Fatface, cursive'
-          fontWeight='700'
-          fontSize='42px'>Matthew Birch</Text>
-        <Text
-          fontFamily='Roboto'
-          fontWeight={100}
-          fontSize='16px'
-          lineHeight='1.6' >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Text>
-
-        <Grid>
+        style={{ margin: '0 1rem' }}>
+        <Header>Matthew Birch</Header>
+        <Standard style={{ margin: '0 0 1rem 0' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Standard>
+        <Grid
+          gap='1rem'>
           <Image
             src={LinkedInImage}
-            size={socialImagesSize}
-            cursor='pointer'
+            style={{
+              ...socialImagesSize,
+              cursor: 'pointer'
+            }}
             onClick={e => onExternalLinkClick(e, 'https://www.linkedin.com/in/matthewlbirch/')}/>
           <Image
             src={GithubImage}
-            size={socialImagesSize}
-            cursor='pointer'
+            style={{
+              ...socialImagesSize,
+              cursor: 'pointer'
+            }}
             onClick={e => onExternalLinkClick(e, 'https://github.com/matthew678532')}/>
           <Image
             src={CodepenImage}
-            size={socialImagesSize}
-            cursor='pointer'
+            style={{
+              ...socialImagesSize,
+              cursor: 'pointer'
+            }}
             onClick={e => onExternalLinkClick(e, 'https://codepen.io/matthew678532')}/>
           <Link to='/blog'>
             Blog

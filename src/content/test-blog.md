@@ -1,7 +1,7 @@
 ---
 title: Test Blog
 category: blogs
-stack: HTML & CSS
+stack: html/css
 slug: test-blog
 ---
 
