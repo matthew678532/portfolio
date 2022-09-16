@@ -1,7 +1,7 @@
 ---
 title: Test Blog 3
 category: blogs
-stack: html/css
+stack: configuration
 slug: test-blog-3
 ---
 

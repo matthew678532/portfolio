@@ -1,7 +1,7 @@
 ---
 title: Test Project
 category: projects
-stack: html/css
+stack: node/express
 slug: test-project
 ---
 

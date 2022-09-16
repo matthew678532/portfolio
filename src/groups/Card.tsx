@@ -11,7 +11,7 @@ import LinkedInImage from 'images/linkedin-brands.svg';
 import GithubImage from 'images/square-github-brands.svg';
 import CodepenImage from 'images/codepen-brands.svg';
 
-import Avatar from 'images/avatar.png';
+import Avatar from 'images/avatar_two.png';
 
 const CardContainer = styled(Grid)`
   background-color: rgba(255, 255, 255, .15);  
@@ -40,7 +40,6 @@ const Card = () => {
         <Image
           src={Avatar}
           style={{
-            borderRadius: "50%",
             width: "50%",
             height: "100%"
           }}

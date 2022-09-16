@@ -1,7 +1,7 @@
 ---
 title: Test Blog 2
 category: blogs
-stack: html/css
+stack: react/gatsby
 slug: test-blog-2
 ---
 
