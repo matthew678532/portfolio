@@ -1,33 +1,34 @@
 import Label from 'components/Label';
 import Post from 'groups/Post';
 
-const removeDuplicateFilters = () => {
-  // Detail duplicate filters logic:
-  // - It may be better to use graphql to fetch these separately rather than together...
-  // - Otherwise just implement some logic here..
-};
-
 export const parseNodes = (nodes, blogCallback, filterCallback) => {
+  const stacks = [];
   const ret = {
     blogs: [],
     filters: []
   };
 
-  nodes.forEach((item, index) => {
+  nodes.forEach(item => {
     const { excerpt, frontmatter } = item;
     const { slug, stack } = frontmatter;
 
-    const Filter = {
-      Component: Label,
-      props: {
-        active: false,
-        stack,
-        isClickable: true,
-        onClick: (e) => filterCallback(e, stack, index)
-      }
-    };
+    if (!stacks.includes(stack)) {
+      const index = stacks.length;
+      console.info('Index from within: ', index);
 
-    ret.filters.push(Filter);
+      const Filter = {
+        Component: Label,
+        props: {
+          active: false,
+          stack,
+          isClickable: true,
+          onClick: (e) => filterCallback(e, stack, index)
+        }
+      };
+  
+      stacks.push(stack);
+      ret.filters.push(Filter);
+    }
 
     const BlogPost = {
       Component: Post,
@@ -58,6 +59,7 @@ const removeFilter = (filters, filterIndex) => {
 };
 
 const addFilter = (filters, filterIndex) => {
+  console.info('Filter index = ', filterIndex);
   const newFilters = [ ...filters ];
   const filter = newFilters[filterIndex];
   filter.props = {
@@ -80,23 +82,28 @@ export const filterClickHandler = (
   setBlogs,
   allBlogs
 ) => {
-  if (activeFilter.current) {
-    if (activeFilter.current === filter) {
-      activeFilter.current = '';
+  const oldFilter = activeFilter.current;
+
+  if (activeFilter.current.filter) {
+    if (activeFilter.current.filter === filter) {
+      activeFilter.current = {
+        filter: '',
+        filterIndex: -1
+      };
 
       setFilters(prevState => removeFilter(prevState, filterIndex));
       setBlogs(allBlogs);
     } else {
-      activeFilter.current = filter;
+      activeFilter.current = { filter, filterIndex };
 
       setFilters(prevState => {
-        const tempState = removeFilter(prevState, filterIndex);
-        return addFilter(tempState, allBlogs);
+        const tempState = removeFilter(prevState, oldFilter.filterIndex);
+        return addFilter(tempState, filterIndex);
       });
       setBlogs(filterBlogs(filter, allBlogs));
     }
   } else {
-    activeFilter.current = filter;
+    activeFilter.current = { filter, filterIndex };
 
     setFilters(prevState => addFilter(prevState, filterIndex));
     setBlogs(filterBlogs(filter, allBlogs));

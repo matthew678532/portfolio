@@ -13,7 +13,10 @@ import { parseNodes, filterClickHandler } from './helper';
 const Blog = () => {
   const nodes = useContent();
   const blogsRef = useRef();
-  const activeFilter = useRef();
+  const activeFilter = useRef({
+    filter: '',
+    filterIndex: -1
+  });
   const [blogs, setBlogs] = useState();
   const [filters, setFilters] = useState();
 
@@ -21,7 +24,7 @@ const Blog = () => {
     return navigate(`/blog/${context.slug}`);
   };
 
-  const onFilterClick = (event, filter, index) => {
+  const onFilterClick = (event, filter, index) => {    
     filterClickHandler(
       filter,
       index,
