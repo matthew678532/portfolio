@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
+import Core from 'core/Core';
 import BlogContainer from 'groups/BlogContainer';
 
 const Entry = ({ data }) => {
@@ -9,10 +10,12 @@ const Entry = ({ data }) => {
   const { title, slug, category, stack } = frontmatter;
 
   return (
-    <BlogContainer>
-      <h2>{title}</h2>
-      <p dangerouslySetInnerHTML={{ __html: html }}></p>
-    </BlogContainer>
+    <Core>
+      <BlogContainer>
+        <h1>{title}</h1>
+        <p dangerouslySetInnerHTML={{ __html: html }}></p>
+      </BlogContainer>
+    </Core>
   );
 };
 
