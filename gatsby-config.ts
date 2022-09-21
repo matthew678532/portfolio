@@ -11,16 +11,33 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: ['gatsby-remark-prismjs']
+        plugins: [
+          'gatsby-remark-prismjs',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 800
+            }
+          }
+        ]
       }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
-        path: './src/content'
+        path: `${__dirname}/src/content`
       }
-    }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/images`,
+      }
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
   ]
 };
 
