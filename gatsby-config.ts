@@ -38,6 +38,12 @@ const config: GatsbyConfig = {
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-disqus',
+      options: {
+        shortname: 'matthewbirch'
+      }
+    }
   ]
 };
 

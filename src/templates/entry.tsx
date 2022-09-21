@@ -1,15 +1,24 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
+import { Disqus } from 'gatsby-plugin-disqus';
 
 import Core from 'core/Core';
 import BlogContainer from 'groups/BlogContainer';
 
 const Entry = ({ data }) => {
-  const { markdownRemark } = data;
+  const { markdownRemark, site } = data;
   const { html, frontmatter } = markdownRemark;
   const { title, slug, category, stack, featuredImage } = frontmatter;
   const { fluid } = featuredImage.childImageSharp;
+
+  const { siteMetadata: { siteUrl } } = site;
+
+  const disqusConfig = {
+    url: `${siteUrl+location.pathname}`,
+    identifier: slug,
+    title
+  };
 
   return (
     <Core>
@@ -17,6 +26,7 @@ const Entry = ({ data }) => {
         <h1>{title}</h1>
         <Image fluid={fluid} />
         <p dangerouslySetInnerHTML={{ __html: html }}></p>
+        <Disqus config={disqusConfig} />
       </BlogContainer>
     </Core>
   );
@@ -40,6 +50,11 @@ export const query = graphql`
             }
           }
         }
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }
